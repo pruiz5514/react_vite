@@ -4,7 +4,7 @@ import { ShoppingBagIcon } from '@heroicons/react/24/solid'
 import { ShoppingCartContext } from "../../Context"
 
 const Navbar = () =>{
-    const contex = useContext(ShoppingCartContext)
+    const context = useContext(ShoppingCartContext)
     const activeStyle = 'underline underline-offset-4'
     return(
         <nav className='flex justify-between items-center fixed z-10 top-0 w-full py-5 px-8 text-sm font-light bg-white'>
@@ -102,8 +102,8 @@ const Navbar = () =>{
                     </NavLink>
                 </li>
                 <li className='flex items-center' >
-                <ShoppingBagIcon className='h-6 w-6 text-black'/> 
-                <div>{contex.count}</div>
+                <ShoppingBagIcon onClick={()=>context.openCheckoutSideMenu()} className='h-6 w-6 text-black cursor-pointer'/> 
+                <div>{context.count}</div>
                 </li>
             </ul>
         </nav>
